@@ -51,10 +51,10 @@ def walk_path(path,size):
     walk = os.walk(path)
     for root,dirs,files in walk:
         for file in files:
-            if file.endswith(".jpg"):
+            if file.endswith(".BMP"):
                 heximg = getPic(os.path.join(root,file),size)
                 setColour(heximg,file.split(".")[0])
-#    winsound.Beep(1000,1000)
+                winsound.Beep(1000,1000)
 
 def one_deal(path,size):
     heximg = getPic(path,size)
@@ -62,7 +62,8 @@ def one_deal(path,size):
 #    winsound.Beep(1000,1000)
 
 if __name__ == "__main__":
-    path = 'E:/excel_pix_img/out/lib.jpg'
-    #walk_path()
+    path = os.path.join(os.path.dirname(os.path.realpath(__file__)),'out\\ldr11.jpg')
+    print(path)
+    #walk_path(path,100)
     one_deal(path,100)
 
